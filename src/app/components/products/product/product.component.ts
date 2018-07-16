@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 
-//  Service 
+//  Service
 import { ProductService } from '../../../services/product.service';
 
 // Class
@@ -27,21 +27,28 @@ export class ProductComponent implements OnInit {
     this.resetForm();
   }
 
-  onSubmit(productForm: NgForm)
-  {
-    if(productForm.value.$key == null)
+  onSubmit(productForm: NgForm) {
+    let way = true;
+    if (productForm.value.$key == null) {
       this.productService.insertProduct(productForm.value);
-    else
+      way = true;
+    } else {
     this.productService.updateProduct(productForm.value);
-    
+      way = false;
+    }
+
     this.resetForm(productForm);
-    this.toastr.success('Sucessful Operation', 'Product Registered');
+    if (way) {
+      this.toastr.success('Operacion Exitosa', 'Producto Registrado');
+    } else {
+      this.toastr.success('Operacion Exitosa', 'Producto Modificado');
+    }
   }
 
-  resetForm(productForm?: NgForm)
-  {
-    if(productForm != null)
+  resetForm(productForm?: NgForm) {
+    if (productForm != null) {
       productForm.reset();
+    }
       this.productService.selectedProduct = new Product();
   }
 

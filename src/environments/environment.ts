@@ -6,11 +6,11 @@
 export const environment = {
   production: false,
   firebase: {
-    apiKey: "AIzaSyCEg94DGJu4Xf_fGua4fb52ysYK0z7BhA8",
-    authDomain: "angular5-crud-b366c.firebaseapp.com",
-    databaseURL: "https://angular5-crud-b366c.firebaseio.com",
-    projectId: "angular5-crud-b366c",
-    storageBucket: "angular5-crud-b366c.appspot.com",
-    messagingSenderId: "1032386966231"
+    apiKey: "AIzaSyC-7SclXE3pnQusPG2eNEMEOub90Q84bPc",
+    authDomain: "app-angular-crud-firebase.firebaseapp.com",
+    databaseURL: "https://app-angular-crud-firebase.firebaseio.com",
+    projectId: "app-angular-crud-firebase",
+    storageBucket: "app-angular-crud-firebase.appspot.com",
+    messagingSenderId: "344996929732"
   }
 };

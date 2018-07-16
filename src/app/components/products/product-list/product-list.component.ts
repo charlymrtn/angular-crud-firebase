@@ -27,8 +27,8 @@ export class ProductListComponent implements OnInit {
       .snapshotChanges().subscribe(item => {
         this.productList = [];
         item.forEach(element => {
-          let x = element.payload.toJSON();
-          x["$key"] = element.key;
+          const x = element.payload.toJSON();
+          x['$key'] = element.key;
           this.productList.push(x as Product);
         });
       });
@@ -39,9 +39,9 @@ export class ProductListComponent implements OnInit {
   }
 
   onDelete($key: string) {
-    if(confirm('Are you sure you want to delete it?')) {
+    if (confirm('Estas seguro de eliminar el producto?')) {
       this.productService.deleteProduct($key);
-      this.toastr.warning('Deleted Successfully', 'Product Removed');
+      this.toastr.warning('Operacion Exitosa', 'Producto Borrado');
     }
   }
 
